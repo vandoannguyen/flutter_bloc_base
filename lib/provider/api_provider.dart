@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:connectivity/connectivity.dart';
+// import 'package:connectivity/connectivity.dart';
 import 'package:dio/dio.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:init_flutter_app_bloc/bloc/app/app_state.dart';
@@ -94,17 +94,17 @@ class Api {
     } catch (e) {
       client.close();
       //check has internet connection
-      var connectivityResult = await (Connectivity().checkConnectivity());
-
-      if (connectivityResult == ConnectivityResult.mobile ||
-          connectivityResult == ConnectivityResult.wifi) {
-        print('Error: Server!');
-        return {
-          "status": false,
-          "error": "server_error",
-          "message": ["Server error"]
-        };
-      }
+      // var connectivityResult = await (Connectivity().checkConnectivity());
+      //
+      // if (connectivityResult == ConnectivityResult.mobile ||
+      //     connectivityResult == ConnectivityResult.wifi) {
+      //   print('Error: Server!');
+      //   return {
+      //     "status": false,
+      //     "error": "server_error",
+      //     "message": ["Server error"]
+      //   };
+      // }
 
       print('Error: Network!');
       return {

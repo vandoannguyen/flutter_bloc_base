@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:connectivity/connectivity.dart';
+// import 'package:connectivity/connectivity.dart';
 
 class InternetConnection {
 
@@ -12,10 +12,10 @@ class InternetConnection {
 
   bool hasConnection = false;
   StreamController connectionChangeController = new StreamController.broadcast();
-  final Connectivity _connectivity = Connectivity();
+  // final Connectivity _connectivity = Connectivity();
 
   void initialize() {
-    _connectivity.onConnectivityChanged.listen(_connectionChange);
+    // _connectivity.onConnectivityChanged.listen(_connectionChange);
     checkConnection();
   }
 
@@ -25,9 +25,9 @@ class InternetConnection {
     connectionChangeController.close();
   }
 
-  void _connectionChange(ConnectivityResult result) {
-    checkConnection();
-  }
+  // void _connectionChange(ConnectivityResult result) {
+  //   checkConnection();
+  // }
 
   Future<bool> checkConnection() async {
     bool previousConnection = hasConnection;
